@@ -1,5 +1,4 @@
-Write-Host "Welcome to the Automatiz-inator."
-Write-Host "This script activates Windows & installs some software."
+Write-Host '=====> automatr <====='
 
 # Windows Activation
 $id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -8,79 +7,110 @@ if ($p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) 
     slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
     slmgr /skms kms8.msguides.com
     slmgr /ato
+    Write-Host "==================================================================="
+    Write-Host "The OS was activated successfully."
+    Write-Host "==================================================================="
 } else {
+    Write-Host "==================================================================="
     Write-Host "Please run the script as an Administrator to activate Windows."
+    Write-Host "==================================================================="
 }
 
 # Audacity
-$confirm01 = Read-Host "Do you wish to install Audacity on your computer? (y/n)"
+$confirm01 = Read-Host 'Do you wish to install Audacity on your computer? (y/n)'
 if($confirm01 -eq "y") {
     winget install Audacity.Audacity
+} else {
+    Write-Host 'The installation for Audacity was aborted.'
 }
 
 # Blender
-$confirm02 = Read-Host "Do you wish to install Blender on your computer? (y/n)"
+$confirm02 = Read-Host 'Do you wish to install Blender on your computer? (y/n)'
 if($confirm02 -eq "y") {
     winget install BlenderFoundation.Blender
+} else {
+    Write-Host 'The installation for Blender was aborted.'
 }
 
 # Discord
-$confirm03 = Read-Host "Do you wish to install Discord on your computer? (y/n)"
+$confirm03 = Read-Host 'Do you wish to install Discord on your computer? (y/n)'
 if($confirm03 -eq "y") {
     winget install Discord.Discord
+} else {
+    Write-Host 'The installation for Discord was aborted.'
 }
 
 # GitHub
-$confirm04 = Read-Host "Do you wish to install Git & GitHub Desktop on your computer? (y/n)"
+$confirm04 = Read-Host 'Do you wish to install Git & GitHub Desktop on your computer? (y/n)'
 if($confirm04 -eq "y") {
     winget install Git.Git
     winget install GitHub.GitLFS
     winget install GitHub.GitHubDesktop
+} else {
+    Write-Host 'The installation for Git & GitHub Desktop was aborted.'
 }
 
 # Notepad
-$confirm05 = Read-Host "Do you wish to install Notepad++ on your computer? (y/n)"
+$confirm05 = Read-Host 'Do you wish to install Notepad++ on your computer? (y/n)'
 if($confirm05 -eq "y") {
     winget install Notepad++.Notepad++
+} else {
+    Write-Host 'The installation for Notepad++ was aborted.'
 }
 
 # NodeJS
-$confirm06 = Read-Host "Do you wish to install NodeJS on your computer? (y/n)"
+$confirm06 = Read-Host 'Do you wish to install NodeJS on your computer? (y/n)'
 if($confirm06 -eq "y") {
     winget install OpenJS.NodeJS
+} else {
+    Write-Host 'The installation for NodeJS was aborted.'
 }
 
 # OBS
-$confirm07 = Read-Host "Do you wish to install OBS Studio on your computer? (y/n)"
+$confirm07 = Read-Host 'Do you wish to install OBS Studio on your computer? (y/n)'
 if($confirm07 -eq "y") {
     winget install OBSProject.OBSStudio
+} else {
+    Write-Host 'The installation for OBS Studio was aborted.'
 }
 
 # Parsec
-$confirm08 = Read-Host "Do you wish to install Parsec on your computer? (y/n)"
+$confirm08 = Read-Host 'Do you wish to install Parsec on your computer? (y/n)'
 if($confirm08 -eq "y") {
     winget install Parsec.Parsec
+} else {
+    Write-Host 'The installation for Parsec was aborted.'
 }
 
 # Rainmeter
-$confirm09 = Read-Host "Do you wish to install Rainmeter on your computer? (y/n)"
+$confirm09 = Read-Host 'Do you wish to install Rainmeter on your computer? (y/n)'
 if($confirm09 -eq "y") {
-    winget install Rainmeter
+    winget install Rainmeter.Rainmeter
+} else {
+    Write-Host 'The installation for Rainmeter was aborted.'
 }
 
 # StartAllBack (for Windows 11)
 if ([System.Environment]::OSVersion.Version.Build -ge 22000) {
-    $confirm10 = Read-Host "Do you wish to install StartAllBack on your computer? (y/n)"
+    $confirm10 = Read-Host 'Do you wish to install StartAllBack on your computer? (y/n)'
     if($confirm10 -eq "y") {
         winget install startallback
+    } else {
+        Write-Host 'The installation for StartAllBack was aborted.'
     }
+} else {
+    Write-Host 'Your OS is not supported.'
 }
 
 # VLC
-$confirm11 = Read-Host "Do you wish to install VLC on your computer? (y/n)"
+$confirm11 = Read-Host 'Do you wish to install VLC on your computer? (y/n)'
 if($confirm11 -eq "y") {
     winget install VideoLAN.VLC
+} else {
+    Write-Host 'The installation for VLC was aborted.'
 }
 
-Write-Host "Thank you for using this script. Have a great day! - whiteex"
+Write-Host '==================================================================='
+Write-Host '"Thank you for running this script. Have a great day!" - whiteex'
+Write-Host '==================================================================='
 Pause
