@@ -81,3 +81,6 @@ $confirm11 = Read-Host "Do you wish to install VLC on your computer? (y/n)"
 if($confirm11 -eq "y") {
     winget install VideoLAN.VLC
 }
+
+Write-Host "Thank you for using this script. Have a great day! - whiteex"
+Pause
