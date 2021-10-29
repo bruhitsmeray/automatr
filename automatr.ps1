@@ -112,7 +112,9 @@ if ([System.Environment]::OSVersion.Version.Build -ge 22000) {
         Write-Host 'The installation for StartAllBack was aborted.'
     }
 } else {
-    Write-Host 'Your OS is not supported.'
+    Write-Host '==================================================================='
+    Write-Host 'Your Operating System is not supported. (Windows 11 build 22000.xx required)'
+    Write-Host '==================================================================='
 }
 
 # VLC
