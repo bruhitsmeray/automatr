@@ -79,17 +79,25 @@ if($confirm07 -eq "y") {
     Write-Host 'The installation for OBS Studio was aborted.'
 }
 
-# Parsec
-$confirm08 = Read-Host 'Do you wish to install Parsec on your computer? (y/n)'
+# qBittorrent
+$confirm08 = Read-Host 'Do you wish to install OBS Studio on your computer? (y/n)'
 if($confirm08 -eq "y") {
+    winget install -e --id qBittorrent.qBittorrent
+} else {
+    Write-Host 'The installation for qBittorrent was aborted.'
+}
+
+# Parsec
+$confirm09 = Read-Host 'Do you wish to install Parsec on your computer? (y/n)'
+if($confirm09 -eq "y") {
     winget install -e --id Parsec.Parsec
 } else {
     Write-Host 'The installation for Parsec was aborted.'
 }
 
 # Rainmeter
-$confirm09 = Read-Host 'Do you wish to install Rainmeter on your computer? (y/n)'
-if($confirm09 -eq "y") {
+$confirm10 = Read-Host 'Do you wish to install Rainmeter on your computer? (y/n)'
+if($confirm10 -eq "y") {
     winget install -e --id Rainmeter.Rainmeter
 } else {
     Write-Host 'The installation for Rainmeter was aborted.'
@@ -97,8 +105,8 @@ if($confirm09 -eq "y") {
 
 # StartAllBack (for Windows 11)
 if ([System.Environment]::OSVersion.Version.Build -ge 22000) {
-    $confirm10 = Read-Host 'Do you wish to install StartAllBack on your computer? (y/n)'
-    if($confirm10 -eq "y") {
+    $confirm11 = Read-Host 'Do you wish to install StartAllBack on your computer? (y/n)'
+    if($confirm11 -eq "y") {
         winget install startallback
     } else {
         Write-Host 'The installation for StartAllBack was aborted.'
@@ -108,8 +116,8 @@ if ([System.Environment]::OSVersion.Version.Build -ge 22000) {
 }
 
 # VLC
-$confirm11 = Read-Host 'Do you wish to install VLC on your computer? (y/n)'
-if($confirm11 -eq "y") {
+$confirm12 = Read-Host 'Do you wish to install VLC on your computer? (y/n)'
+if($confirm12 -eq "y") {
     winget install -e --id VideoLAN.VLC
 } else {
     Write-Host 'The installation for VLC was aborted.'
