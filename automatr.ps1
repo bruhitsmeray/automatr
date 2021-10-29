@@ -6,11 +6,11 @@ if($confirm00 -eq "y") {
     $id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
     $p = New-Object System.Security.Principal.WindowsPrincipal($id)
     if ($p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
-        Start-Sleep -Seconds 3
+        Start-Sleep -Seconds 5
         slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
         Start-Sleep -Seconds 5
         slmgr /skms kms8.msguides.com
-        Start-Sleep -Seconds 5
+        Start-Sleep -Seconds 10
         slmgr /ato
         Write-Host "==================================================================="
         Write-Host "> The OS was activated successfully."
