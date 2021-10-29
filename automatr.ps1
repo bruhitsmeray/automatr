@@ -6,17 +6,18 @@ if($confirm00 -eq "y") {
     $id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
     $p = New-Object System.Security.Principal.WindowsPrincipal($id)
     if ($p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
+        Start-Sleep -Seconds 3
         slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
         Start-Sleep -Seconds 5
         slmgr /skms kms8.msguides.com
         Start-Sleep -Seconds 5
         slmgr /ato
         Write-Host "==================================================================="
-        Write-Host "The OS was activated successfully."
+        Write-Host "> The OS was activated successfully."
         Write-Host "==================================================================="
     } else {
         Write-Host "==================================================================="
-        Write-Host "Please run the script as an Administrator to activate Windows."
+        Write-Host "> Please run the script as an Administrator to activate Windows."
         Write-Host "==================================================================="
     }
 }
@@ -127,6 +128,6 @@ if($confirm12 -eq "y") {
 }
 
 Write-Host '==================================================================='
-Write-Host '"Thank you for running this script. Have a great day!" - whiteex'
+Write-Host '> "Thank you for running this script. Have a great day!" - whiteex'
 Write-Host '==================================================================='
 Pause
