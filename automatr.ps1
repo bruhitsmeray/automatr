@@ -7,9 +7,9 @@ if($confirm00 -eq "y") {
     $p = New-Object System.Security.Principal.WindowsPrincipal($id)
     if ($p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
         slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-        Start-Sleep -Seconds 3
+        Start-Sleep -Seconds 5
         slmgr /skms kms8.msguides.com
-        Start-Sleep -Seconds 3
+        Start-Sleep -Seconds 5
         slmgr /ato
         Write-Host "==================================================================="
         Write-Host "The OS was activated successfully."
@@ -113,7 +113,8 @@ if ([System.Environment]::OSVersion.Version.Build -ge 22000) {
     }
 } else {
     Write-Host '==================================================================='
-    Write-Host 'Your Operating System is not supported. (Windows 11 build 22000.xx required)'
+    Write-Host '> StartAllBack is not supported on your Operating System'
+    Write-Host '> (Windows 11 build 22000.xx required)'
     Write-Host '==================================================================='
 }
 
