@@ -80,7 +80,7 @@ if($confirm07 -eq "y") {
 }
 
 # qBittorrent
-$confirm08 = Read-Host 'Do you wish to install OBS Studio on your computer? (y/n)'
+$confirm08 = Read-Host 'Do you wish to install qBittorrent on your computer? (y/n)'
 if($confirm08 -eq "y") {
     winget install -e --id qBittorrent.qBittorrent
 } else {
