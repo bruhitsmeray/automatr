@@ -5,7 +5,9 @@ $id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
 $p = New-Object System.Security.Principal.WindowsPrincipal($id)
 if ($p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
     slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+    Start-Sleep -Seconds 3
     slmgr /skms kms8.msguides.com
+    Start-Sleep -Seconds 3
     slmgr /ato
     Write-Host "==================================================================="
     Write-Host "The OS was activated successfully."
@@ -19,7 +21,7 @@ if ($p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) 
 # Audacity
 $confirm01 = Read-Host 'Do you wish to install Audacity on your computer? (y/n)'
 if($confirm01 -eq "y") {
-    winget install Audacity.Audacity
+    winget install -e --id Audacity.Audacity
 } else {
     Write-Host 'The installation for Audacity was aborted.'
 }
@@ -27,7 +29,7 @@ if($confirm01 -eq "y") {
 # Blender
 $confirm02 = Read-Host 'Do you wish to install Blender on your computer? (y/n)'
 if($confirm02 -eq "y") {
-    winget install BlenderFoundation.Blender
+    winget install -e --id BlenderFoundation.Blender
 } else {
     Write-Host 'The installation for Blender was aborted.'
 }
@@ -35,7 +37,7 @@ if($confirm02 -eq "y") {
 # Discord
 $confirm03 = Read-Host 'Do you wish to install Discord on your computer? (y/n)'
 if($confirm03 -eq "y") {
-    winget install Discord.Discord
+    winget install -e --id Discord.Discord
 } else {
     Write-Host 'The installation for Discord was aborted.'
 }
@@ -43,9 +45,9 @@ if($confirm03 -eq "y") {
 # GitHub
 $confirm04 = Read-Host 'Do you wish to install Git & GitHub Desktop on your computer? (y/n)'
 if($confirm04 -eq "y") {
-    winget install Git.Git
-    winget install GitHub.GitLFS
-    winget install GitHub.GitHubDesktop
+    winget install -e --id Git.Git
+    winget install -e --id GitHub.GitLFS
+    winget install -e --id GitHub.GitHubDesktop
 } else {
     Write-Host 'The installation for Git & GitHub Desktop was aborted.'
 }
@@ -53,7 +55,7 @@ if($confirm04 -eq "y") {
 # Notepad
 $confirm05 = Read-Host 'Do you wish to install Notepad++ on your computer? (y/n)'
 if($confirm05 -eq "y") {
-    winget install Notepad++.Notepad++
+    winget install -e --id Notepad++.Notepad++
 } else {
     Write-Host 'The installation for Notepad++ was aborted.'
 }
@@ -61,7 +63,7 @@ if($confirm05 -eq "y") {
 # NodeJS
 $confirm06 = Read-Host 'Do you wish to install NodeJS on your computer? (y/n)'
 if($confirm06 -eq "y") {
-    winget install OpenJS.NodeJS
+    winget install -e --id OpenJS.NodeJS
 } else {
     Write-Host 'The installation for NodeJS was aborted.'
 }
@@ -69,7 +71,7 @@ if($confirm06 -eq "y") {
 # OBS
 $confirm07 = Read-Host 'Do you wish to install OBS Studio on your computer? (y/n)'
 if($confirm07 -eq "y") {
-    winget install OBSProject.OBSStudio
+    winget install -e --id OBSProject.OBSStudio
 } else {
     Write-Host 'The installation for OBS Studio was aborted.'
 }
@@ -77,7 +79,7 @@ if($confirm07 -eq "y") {
 # Parsec
 $confirm08 = Read-Host 'Do you wish to install Parsec on your computer? (y/n)'
 if($confirm08 -eq "y") {
-    winget install Parsec.Parsec
+    winget install -e --id Parsec.Parsec
 } else {
     Write-Host 'The installation for Parsec was aborted.'
 }
@@ -85,7 +87,7 @@ if($confirm08 -eq "y") {
 # Rainmeter
 $confirm09 = Read-Host 'Do you wish to install Rainmeter on your computer? (y/n)'
 if($confirm09 -eq "y") {
-    winget install Rainmeter.Rainmeter
+    winget install -e --id Rainmeter.Rainmeter
 } else {
     Write-Host 'The installation for Rainmeter was aborted.'
 }
@@ -105,7 +107,7 @@ if ([System.Environment]::OSVersion.Version.Build -ge 22000) {
 # VLC
 $confirm11 = Read-Host 'Do you wish to install VLC on your computer? (y/n)'
 if($confirm11 -eq "y") {
-    winget install VideoLAN.VLC
+    winget install -e --id VideoLAN.VLC
 } else {
     Write-Host 'The installation for VLC was aborted.'
 }
