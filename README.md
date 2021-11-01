@@ -13,4 +13,4 @@ automatr is a PowerShell script that activates Windows and installs the followin
 > - [StartAllBack](https://www.startallback.com/) (if you have Windows 11)
 > - [VLC](https://www.videolan.org/vlc/)
 
-### NOTE: Each app will ask for permission before installing.
+### NOTE: The script will require confirmation for every app soon to be installed.
